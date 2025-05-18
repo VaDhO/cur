@@ -5,7 +5,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QTabWidget, QMainWindow, QWidget, QVBoxLayout, QApplication, QTableWidget, QTableWidgetItem
 
 from IU.view_tab1 import ViewTable1
-from IU.view_tab3 import WievTable3
+from IU.view_tab3 import ViewTable3
 from data_tab import Model
 
 
@@ -19,37 +19,19 @@ class WievModel(QMainWindow):
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
 
-        self.tab1 = QWidget()  # Первая вкладка
-        self.tab3 = QWidget()  # Вторая вкладка
-        self.tab4 = QWidget()
-        self.tab5 = QWidget()
-        self.tab6 = QWidget()
+        # Создаем вкладки и добавляем сразу с содержимым
+        self.add_table_tab(ViewTable1(model_new.tab1), "Модель последняя")
+        self.add_table_tab(ViewTable3(model_new.tab3), "Затраты по маслу в сх")
+        self.add_table_tab(ViewTable3(model_new.tab4), "Затраты по маслу в пр")
+        self.add_table_tab(QWidget(), "Регулирующий блок")
+        self.add_table_tab(QWidget(), "Управляющий блок")
 
-        self.tabs.addTab(self.tab1, "Модель последняя")
-        self.tabs.addTab(self.tab3, "Затраты по маслу в сх")
-        self.tabs.addTab(self.tab4, "Затраты по маслу в пр")
-        self.tabs.addTab(self.tab5, "Регулирующий блок")
-        self.tabs.addTab(self.tab6, "Управляющий блок")
-
-        self.init_table1_tab()
-        #self.init_table3_tab()
-        #self.init_table4_tab()
-        #self.init_table5_tab()
-        #self.init_table6_tab()
-
-    def init_table1_tab(self):
+    def add_table_tab(self, widget, title):
         layout = QVBoxLayout()
-        table_widget = ViewTable1(self.model.tab1)
-        self.tab1.addWidget(table_widget)
-
-        tab_content = QWidget()
-        tab_content.setLayout(layout)
-
-    def init_table3_tab(self):
-        layout = QVBoxLayout()
-        self.tab3 = WievTable3(self.model.tab3)
-        layout.addWidget(self.tab3)
-        self.tab3.setLayout(layout)
+        layout.addWidget(widget)
+        container = QWidget()
+        container.setLayout(layout)
+        self.tabs.addTab(container, title)
 
 
 if __name__ == "__main__":

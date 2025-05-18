@@ -7,9 +7,9 @@ from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 from data_tab import Model
 
 
-class ViewTable3(QTableWidget):
+class ViewTable4(QTableWidget):
     tabel1= pd.DataFrame()
-    def __init__(self, tabel3):
+    def __init__(self, tabel4):
         super().__init__()
 
         self.setRowCount(21)  # 4 строки
@@ -155,12 +155,12 @@ class ViewTable3(QTableWidget):
 
 
         # Данные для таблицы (можно заменить на свои)
-        data = tabel3
+        data = tabel4
 
         # Заполняем таблицу
         for row_idx, row_data in enumerate(list(data.columns)):
             for col_idx, cell_data in enumerate(data[row_data]):
-                if type(cell_data) == float:
+                if type(cell_data) == float or type(cell_data) == int:
                     item = QTableWidgetItem("{:.2f}".format(float(cell_data)))
                     item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)  # Запрет редактирования
                 else:
@@ -183,7 +183,7 @@ class TableWindowM(QMainWindow):
         central_widget.setLayout(layout)
 
         # Создаем таблицу
-        self.table = ViewTable3(tab)
+        self.table = ViewTable4(tab)
 
         layout.addWidget(self.table)
 
@@ -193,6 +193,6 @@ if __name__ == "__main__":
     model_test = Model()
     model_test.calculate_model()
     app = QApplication(sys.argv)
-    window = TableWindowM(model_test.tab3)
+    window = TableWindowM(model_test.tab4)
     window.show()
     sys.exit(app.exec())
