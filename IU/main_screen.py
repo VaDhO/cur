@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QPushButton
 
 from IU.default_screen import DefaultScreen
+from IU.new_model_screen import NewModelScreen
 
 
 class MainScreen(QMainWindow):
@@ -38,6 +39,8 @@ class MainScreen(QMainWindow):
         print("Загрузить модель по умолчанию")
 
     def on_button_new_click(self):
+        self.second_window = NewModelScreen()
+        self.second_window.show()
         print("Новая модель")
 
     def on_button3_click(self):

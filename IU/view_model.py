@@ -12,7 +12,7 @@ from IU.view_tab5 import ViewTable5
 from data_tab import Model
 
 
-class WievModel(QMainWindow):
+class ViewModel(QMainWindow):
     def __init__(self, model_new):
         super().__init__()
         self.setWindowTitle("Приложение с вкладками")
@@ -98,6 +98,6 @@ class WievModel(QMainWindow):
 if __name__ == "__main__":
     model = Model()
     app = QApplication(sys.argv)
-    window = WievModel(model)
+    window = ViewModel(model)
     window.show()
     sys.exit(app.exec())

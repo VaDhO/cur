@@ -152,163 +152,163 @@ class ViewTable1(QTableWidget):
 
         item = QTableWidgetItem("Посевная площадь, га")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(1,0,item)
+        self.setItem(4,0,item)
 
         item = QTableWidgetItem("Урожайность, ц/га")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(2,0,item)
+        self.setItem(5,0,item)
 
         item = QTableWidgetItem("Выход и распределение продукции всего, ц")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(3,0,item)
+        self.setItem(6,0,item)
 
         item = QTableWidgetItem("Себестоимость 1 ц, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(4,0,item)
+        self.setItem(7,0,item)
 
         item = QTableWidgetItem("Себестоимость всего, тыс.руб")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(5,0,item)
+        self.setItem(8,0,item)
 
         item = QTableWidgetItem("Направлено на переработку и реализацию маслосемян: корректирующий коэффициент выхода сырья, ед. ")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(6,0,item)
-
-        item = QTableWidgetItem("   сумма всего, ц")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(7,0,item)
-
-        item = QTableWidgetItem("Себестоимость сырья для переработки: корректирующий коэффициент, ед.")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(8,0,item)
-
-        item = QTableWidgetItem("   1 ц , руб.")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(9,0,item)
 
-        item = QTableWidgetItem("Стоимость сырья для переработки, тыс.руб.")
+        item = QTableWidgetItem("   сумма всего, ц")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(10,0,item)
 
-        item = QTableWidgetItem("Выход готовой продукции: корректирующий коэффициент выхода из 1 ц маслосемян,ед.")
+        item = QTableWidgetItem("Себестоимость сырья для переработки: корректирующий коэффициент, ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(11,0,item)
 
-        item = QTableWidgetItem("   сумма всего, ц")
+        item = QTableWidgetItem("   1 ц , руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(12,0,item)
 
-        item = QTableWidgetItem("Затраты на переработку и доработку маслосемян: корректирующий коэффициент, ед.")
+        item = QTableWidgetItem("Стоимость сырья для переработки, тыс.руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(13,0,item)
 
-        item = QTableWidgetItem("   сумма всего, тыс.руб.")
+        item = QTableWidgetItem("Выход готовой продукции: корректирующий коэффициент выхода из 1 ц маслосемян,ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(14,0,item)
 
-        item = QTableWidgetItem("Себестоимость готовой продукции всего, тыс.руб.")
+        item = QTableWidgetItem("   сумма всего, ц")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(15,0,item)
 
-        item = QTableWidgetItem("Себестоимость 1 ц готовой продукции, руб.")
+        item = QTableWidgetItem("Затраты на переработку и доработку маслосемян: корректирующий коэффициент, ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(16,0,item)
 
-        item = QTableWidgetItem("Товарность: корректирующий коэффициент,ед.")
+        item = QTableWidgetItem("   сумма всего, тыс.руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(17,0,item)
 
-        item = QTableWidgetItem("Объем реализации, ц")
+        item = QTableWidgetItem("Себестоимость готовой продукции всего, тыс.руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(18,0,item)
 
-        item = QTableWidgetItem("Транспортные расходы на реализацию: корректирующий коэффициент, ед.")
+        item = QTableWidgetItem("Себестоимость 1 ц готовой продукции, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(19,0,item)
 
-        item = QTableWidgetItem("   сумма всего, тыс.руб.")
+        item = QTableWidgetItem("Товарность: корректирующий коэффициент,ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(20,0,item)
 
-        item = QTableWidgetItem("Затраты, связанные с реализацией продукции: корректирующий коэффициент, ед.")
+        item = QTableWidgetItem("Объем реализации, ц")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(21,0,item)
 
-        item = QTableWidgetItem("   сумма всего, тыс.руб.")
+        item = QTableWidgetItem("Транспортные расходы на реализацию: корректирующий коэффициент, ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(22,0,item)
 
-        item = QTableWidgetItem("    в расчете на 1 ц, руб.")
+        item = QTableWidgetItem("   сумма всего, тыс.руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(23,0,item)
 
-        item = QTableWidgetItem("Полная себестоимость реализованной продукции, тыс. руб")
+        item = QTableWidgetItem("Затраты, связанные с реализацией продукции: корректирующий коэффициент, ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(24,0,item)
 
-        item = QTableWidgetItem("Полная себестоимость 1 ц реализованной продукции, руб.")
+        item = QTableWidgetItem("   сумма всего, тыс.руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(25,0,item)
 
-        item = QTableWidgetItem("Средняя цена единицы продукции: корректирующий коэффициент, ед.")
+        item = QTableWidgetItem("    в расчете на 1 ц, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(26,0,item)
 
-        item = QTableWidgetItem("    маслосемян, руб.")
+        item = QTableWidgetItem("Полная себестоимость реализованной продукции, тыс. руб")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(27,0,item)
 
-        item = QTableWidgetItem("   масла подсолнечного, руб.")
+        item = QTableWidgetItem("Полная себестоимость 1 ц реализованной продукции, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(28,0,item)
 
-        item = QTableWidgetItem("Таможенная пошлина, руб.")
+        item = QTableWidgetItem("Средняя цена единицы продукции: корректирующий коэффициент, ед.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(29,0,item)
 
-        item = QTableWidgetItem("Цена без пошлины, руб./ц")
+        item = QTableWidgetItem("    маслосемян, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(30,0,item)
 
-        item = QTableWidgetItem("Выручка от реализации продукции, тыс.руб.: маслосемян с пошлиной")
+        item = QTableWidgetItem("   масла подсолнечного, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(31,0,item)
 
-        item = QTableWidgetItem("   без пошлины")
+        item = QTableWidgetItem("Таможенная пошлина, руб.")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(32,0,item)
 
-        item = QTableWidgetItem("   масла подсолнечного с пошлиной")
+        item = QTableWidgetItem("Цена без пошлины, руб./ц")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(33,0,item)
 
-        item = QTableWidgetItem("   без пошлины")
+        item = QTableWidgetItem("Выручка от реализации продукции, тыс.руб.: маслосемян с пошлиной")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(34,0,item)
 
-        item = QTableWidgetItem("Прибыль продаж, тыс.руб.:с пошлиной")
+        item = QTableWidgetItem("   без пошлины")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(35,0,item)
 
-        item = QTableWidgetItem("   без пошлины")
+        item = QTableWidgetItem("   масла подсолнечного с пошлиной")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(36,0,item)
 
-        item = QTableWidgetItem("Рентабельность продаж,%:с пошлиной")
+        item = QTableWidgetItem("   без пошлины")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(37,0,item)
 
-        item = QTableWidgetItem("   без пошлины")
+        item = QTableWidgetItem("Прибыль продаж, тыс.руб.:с пошлиной")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(38,0,item)
 
-        item = QTableWidgetItem("Пошлина, тыс.руб.")
+        item = QTableWidgetItem("   без пошлины")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(39,0,item)
 
-        item = QTableWidgetItem("Доля в полной прибыли, %")
+        item = QTableWidgetItem("Рентабельность продаж,%:с пошлиной")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(40,0,item)
+
+        item = QTableWidgetItem("   без пошлины")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(41,0,item)
+
+        item = QTableWidgetItem("Пошлина, тыс.руб.")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(42,0,item)
+
+        item = QTableWidgetItem("Доля в полной прибыли, %")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(43,0,item)
 
         # Данные для таблицы (можно заменить на свои)
         data = tabel1
