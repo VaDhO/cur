@@ -168,32 +168,3 @@ class ViewTable5(QTableWidget):
                     item = QTableWidgetItem(cell_data)
                     item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)  # Запрет редактирования
                 self.setItem(col_idx+4, row_idx+1, item)
-
-class TableWindowM(QMainWindow):
-    tabel1 = pd.DataFrame()
-
-    def __init__(self, tab):
-        super().__init__()
-        self.setWindowTitle("Пример таблицы в PyQt6")
-        self.setGeometry(100, 100, 600, 400)
-
-        # Создаем центральный виджет и layout
-        central_widget = QWidget()
-        self.setCentralWidget(central_widget)
-        layout = QVBoxLayout()
-        central_widget.setLayout(layout)
-
-        # Создаем таблицу
-        self.table = ViewTable3(tab)
-
-        layout.addWidget(self.table)
-
-
-
-if __name__ == "__main__":
-    model_test = Model()
-    model_test.calculate_model()
-    app = QApplication(sys.argv)
-    window = TableWindowM(model_test.tab5)
-    window.show()
-    sys.exit(app.exec())

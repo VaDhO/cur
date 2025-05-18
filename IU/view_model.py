@@ -4,6 +4,7 @@ from PyQt6.QtCore import Qt
 
 from PyQt6.QtWidgets import QTabWidget, QMainWindow, QWidget, QVBoxLayout, QApplication, QTableWidget, QTableWidgetItem
 
+from IU.View_tab6 import ViewTable6
 from IU.view_tab1 import ViewTable1
 from IU.view_tab3 import ViewTable3
 from IU.view_tab5 import ViewTable5
@@ -25,7 +26,7 @@ class WievModel(QMainWindow):
         self.add_table_tab(ViewTable3(model_new.tab3), "Затраты по маслу в сх")
         self.add_table_tab(ViewTable3(model_new.tab4), "Затраты по маслу в пр")
         self.add_table_tab(ViewTable5(model_new.tab5), "Регулирующий блок")
-        self.add_table_tab(QWidget(), "Управляющий блок")
+        self.add_table_tab(ViewTable6(model_new.tab6), "Управляющий блок")
 
     def add_table_tab(self, widget, title):
         layout = QVBoxLayout()
