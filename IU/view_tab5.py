@@ -7,9 +7,9 @@ from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
 from data_tab import Model
 
 
-class ViewTable3(QTableWidget):
+class ViewTable5(QTableWidget):
     tabel1= pd.DataFrame()
-    def __init__(self, tabel3):
+    def __init__(self, tabel5):
         super().__init__()
 
         self.setRowCount(21)  # 4 строки
@@ -17,145 +17,146 @@ class ViewTable3(QTableWidget):
 
         item = QTableWidgetItem("Показатели")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(0,0,3,2)
+        self.setSpan(0,0,4,1)
         self.setItem(0,0,item)
 
-        item = QTableWidgetItem("Этапы формирования и доставки груза")
+        item = QTableWidgetItem("Исходные данные")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(0,2,1,7)
+        self.setSpan(0,1,4,1)
+        self.setItem(0,1,item)
+
+        item = QTableWidgetItem("Варианты реализации продукции")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setSpan(0,2,1,8)
         self.setItem(0,2,item)
 
-        item = QTableWidgetItem("название")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(3,0,item)
-
-        item = QTableWidgetItem("ед. Изм")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setItem(3,1,item)
-
-        item = QTableWidgetItem("I маршрут ")
+        item = QTableWidgetItem("маслосемян")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setSpan(1,2,1,2)
         self.setItem(1,2,item)
 
-        item = QTableWidgetItem("II маршрут")
+        item = QTableWidgetItem("масла подсолнечного")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(1,4,1,3)
+        self.setSpan(1,4,1,6)
         self.setItem(1,4,item)
 
-        item = QTableWidgetItem("всего затрат")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(1,7,1,2)
-        self.setItem(1,7,item)
-
-        item = QTableWidgetItem("Всего")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(0,9,4,1)
-        self.setItem(0,9,item)
-
-        item = QTableWidgetItem("до элеватора автомобильным транспортом")
+        item = QTableWidgetItem("внутренний рынок")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setSpan(2,2,2,1)
         self.setItem(2,2,item)
 
-        item = QTableWidgetItem("до пункта назначения по железной дороге")
+        item = QTableWidgetItem("экспорт")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setSpan(2,3,2,1)
         self.setItem(2,3,item)
 
-        item = QTableWidgetItem("до речного порта")
+        item = QTableWidgetItem("собственная переработка")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(2,4,2,1)
+        self.setSpan(2,4,1,4)
         self.setItem(2,4,item)
 
-        item = QTableWidgetItem("до морского порта речным транспортом")
+        item = QTableWidgetItem("промышленная переработка")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(2,5,2,1)
-        self.setItem(2,5,item)
-
-        item = QTableWidgetItem("до морского порта назначения")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(2,6,2,1)
-        self.setItem(2,6,item)
-
-        item = QTableWidgetItem("по железной дороге( I маршрут )")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(2,7,2,1)
-        self.setItem(2,7,item)
-
-        item = QTableWidgetItem("водным транспором(II маршрут)")
-        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
-        self.setSpan(2,8,2,1)
+        self.setSpan(2,8,1,2)
         self.setItem(2,8,item)
 
-        item = QTableWidgetItem("Объем реализации")
+        item = QTableWidgetItem("для собственных нужд")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(3,4,item)
+
+        item = QTableWidgetItem("оплата услуг по пе-реработке даваль-ческого сырья")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(3,5,item)
+
+        item = QTableWidgetItem("внутренний рынок")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(3,6,item)
+
+        item = QTableWidgetItem("экспорт")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(3,7,item)
+
+        item = QTableWidgetItem("внутренний рынок ")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(3,8,item)
+
+        item = QTableWidgetItem("экспорт")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(3,9,item)
+
+
+        item = QTableWidgetItem("Посевная площадь, га")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(4,0,item)
 
-        item = QTableWidgetItem("Расстояния")
+        item = QTableWidgetItem("Урожайность, ц/га")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(5,0,item)
 
-        item = QTableWidgetItem("Объём грузоперевозок")
+        item = QTableWidgetItem("Выход продукции всего, ц")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(6,0,item)
 
-        item = QTableWidgetItem("Тарифы за: 1 т.груза")
+        item = QTableWidgetItem("Себестоимость 1 ц, руб")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(7,0,item)
 
-        item = QTableWidgetItem(" 1 км расстояния")
+        item = QTableWidgetItem("Себестоимость всего, тыс.руб")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(8,0,item)
 
-        item = QTableWidgetItem("Стоимость транспорти-ровки по: объёму")
+        item = QTableWidgetItem("Корректирующие коэффициенты распределения исходного сырья по:")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(9,0,item)
 
-        item = QTableWidgetItem("расстоянию")
+        item = QTableWidgetItem("виду продукции")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(10,0,item)
 
-        item = QTableWidgetItem("Всего")
+        item = QTableWidgetItem("способам переработки")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(11,0,item)
 
-        item = QTableWidgetItem(" 1 т.км  грузоперевозок")
+        item = QTableWidgetItem("каналам реализации")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(12,0,item)
 
-        item = QTableWidgetItem("затраты  по охране и сопровождению, 5%")
+        item = QTableWidgetItem("выходу сырья")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(13,0,item)
 
-        item = QTableWidgetItem("прочие по оформлению, 4%")
+        item = QTableWidgetItem("себестоимости сырья для переработки")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(14,0,item)
 
-        item = QTableWidgetItem("прочие организация, 3%")
+        item = QTableWidgetItem("выходу готовой продукции")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(15,0,item)
 
-        item = QTableWidgetItem("Всего")
+        item = QTableWidgetItem("затратам на переработку и доработку маслосемян")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(16,0,item)
 
-        item = QTableWidgetItem("Транспортные расходы на 1 т груза")
+        item = QTableWidgetItem("товарности")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(17,0,item)
 
-        item = QTableWidgetItem("Расходы, связанные с реализацией на 1 т груза ")
+        item = QTableWidgetItem("транспортным расходам на реализацию")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(18,0,item)
 
-        item = QTableWidgetItem("Всего транспортных и связанных с реализацией расходов на т груза")
+        item = QTableWidgetItem("затратам, связанным с реализацией продукции")
         item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
         self.setItem(19,0,item)
+
+        item = QTableWidgetItem("по средней цене единицы продукции")
+        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
+        self.setItem(20,0,item)
 
 
 
         # Данные для таблицы (можно заменить на свои)
-        data = tabel3
+        data = tabel5
 
         # Заполняем таблицу
         for row_idx, row_data in enumerate(list(data.columns)):
@@ -193,6 +194,6 @@ if __name__ == "__main__":
     model_test = Model()
     model_test.calculate_model()
     app = QApplication(sys.argv)
-    window = TableWindowM(model_test.tab3)
+    window = TableWindowM(model_test.tab5)
     window.show()
     sys.exit(app.exec())
