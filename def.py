@@ -32,14 +32,13 @@ class TableWindowM(QMainWindow):
         # Заполняем таблицу данными
         self.fill_table(tab)
 
-    def fill_table(self,tab):
+    def fill_table(self, tab):
         # Устанавливаем заголовки столбцов
         headers = list(tab.columns)
         self.table.setHorizontalHeaderLabels(headers)
 
         # Данные для таблицы (можно заменить на свои)
         data = tab
-
 
         # Заполняем таблицу
         for row_idx, row_data in enumerate(list(data.columns)):
