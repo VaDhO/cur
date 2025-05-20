@@ -1,7 +1,3 @@
-import sys
-
-from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QApplication
-
 from IU.view_model import ViewModel
 from data_tab import Model
 

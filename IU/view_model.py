@@ -1,9 +1,8 @@
 import sys
+
 import pandas as pd
-from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (QTabWidget, QMainWindow, QWidget, QVBoxLayout,
-                             QApplication, QTableWidget, QTableWidgetItem,
-                             QPushButton, QHBoxLayout, QMessageBox, QFileDialog)
+                             QApplication, QPushButton, QHBoxLayout, QMessageBox, QFileDialog)
 
 from IU.View_tab6 import ViewTable6
 from IU.view_tab1 import ViewTable1

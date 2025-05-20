@@ -1,10 +1,11 @@
 import sys
+
 import pandas as pd
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QTableWidget, QTableWidgetItem,
     QVBoxLayout, QWidget
 )
-from PyQt6.QtCore import Qt
 
 from data_tab import Model
 

@@ -1,10 +1,6 @@
-import sys
-
 import pandas as pd
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget, QMainWindow, QApplication
-
-from data_tab import Model
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
 
 
 class ViewTable1(QTableWidget):

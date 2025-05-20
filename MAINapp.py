@@ -1,5 +1,6 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget
+
+from PyQt6.QtWidgets import QApplication
 
 from IU.main_screen import MainScreen
 

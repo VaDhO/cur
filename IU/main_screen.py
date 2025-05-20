@@ -1,7 +1,6 @@
 from io import StringIO
 
 import pandas as pd
-
 from PyQt6.QtWidgets import QFileDialog, QMainWindow, QWidget, QVBoxLayout, QPushButton
 
 from IU.default_screen import DefaultScreen
