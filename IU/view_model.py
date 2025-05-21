@@ -9,7 +9,7 @@ from IU.view_tab1 import ViewTable1
 from IU.view_tab3 import ViewTable3
 from IU.view_tab5 import ViewTable5
 from data_tab import Model
-from defa import save_all_tables_to_excel_with_headers
+from defa import save_model_to_template
 
 
 class ViewModel(QMainWindow):
@@ -144,7 +144,7 @@ class ViewModel(QMainWindow):
             return
 
         try:
-            save_all_tables_to_excel_with_headers(self.tabs, file_path)
+            save_model_to_template(self.model, file_path)
             QMessageBox.information(self, "Успех", f"Файл успешно сохранён:\n{file_path}")
         except Exception as e:
             QMessageBox.critical(self, "Ошибка", f"Не удалось сохранить файл:\n{str(e)}")
