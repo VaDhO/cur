@@ -1097,10 +1097,10 @@ class Model:
         Запускает последовательный расчёт всех таблиц модели.
         """
         try:
-            self.cal_tab5()
-            self.cal_tab6()
             self.cal_tab1()
             self.cal_tab3()
             self.cal_tab4()
+            self.cal_tab5()
+            self.cal_tab6()
         except Exception as e:
             raise RuntimeError(f"Ошибка при общем расчёте модели: {e}")

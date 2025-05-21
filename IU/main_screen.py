@@ -71,7 +71,7 @@ class MainScreen(QMainWindow):
         Все значения, которые можно привести к числу — конвертируются в float,
         остальные заменяются на пустую строку.
         """
-        model = Model()  # Предположим, что у тебя есть класс Model
+        model = Model()
 
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
