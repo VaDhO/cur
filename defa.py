@@ -4,13 +4,19 @@ from shutil import copyfile
 import sys
 import os
 
-def get_template_path():
-    if getattr(sys, 'frozen', False):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(__file__)
-    return os.path.join(base_path, '1,3,4,5,6.xlsx')
-def save_model_to_template(model, output_path, template_path="1,3,4,5,6.xlsx"):
+def save_model_to_template(model, output_path):
+    import sys, os
+    from openpyxl import load_workbook
+    from shutil import copyfile
+
+    def get_template_path():
+        if getattr(sys, 'frozen', False):
+            base_path = sys._MEIPASS
+        else:
+            base_path = os.path.dirname(__file__)
+        return os.path.join(base_path, '1,3,4,5,6.xlsx')
+
+    template_path = get_template_path()
     copyfile(template_path, output_path)
     wb = load_workbook(output_path)
 
