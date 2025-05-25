@@ -130,7 +130,7 @@ class ViewModel(QMainWindow):
             return
 
         try:
-            # Пример: сохраняем все таблицы как CSV, разделенные секциями
+            #сохраняем все таблицы как CSV, разделенные секциями
             with open(file_path, 'w', encoding='utf-8') as f:
                 for name, df in [
                     ('tab1', self.model.tab1),
@@ -167,11 +167,3 @@ class ViewModel(QMainWindow):
                 QMessageBox.information(self, "Отмена", "Изменения отменены.")
         except Exception as e:
             QMessageBox.critical(self, "Ошибка", f"Ошибка при обновлении модели:\n{str(e)}")
-
-
-if __name__ == "__main__":
-    model = Model()
-    app = QApplication(sys.argv)
-    window = ViewModel(model)
-    window.show()
-    sys.exit(app.exec())

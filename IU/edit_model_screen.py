@@ -202,12 +202,3 @@ class EditModelScreen(QDialog):
             self.model_data.tab4.loc[1, 'ЭФиДГ2МПН'] = safe_float(params[14]) if params[14] not in (None, '') else  self.model_data.tab4.loc[1, 'ЭФиДГ2МПН']
             self.model_data.tab4.loc[3, 'ЭФиДГ2МПН'] = safe_float(params[15]) if params[15] not in (None, '') else  self.model_data.tab4.loc[3, 'ЭФиДГ2МПН']
             self.model_data.tab4.loc[4, 'ЭФиДГ2МПН'] = safe_float(params[16]) if params[16] not in (None, '') else  self.model_data.tab4.loc[4, 'ЭФиДГ2МПН']
-
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    model = Model()
-    window = EditModelScreen(model)
-    window.show()
-    sys.exit(app.exec())

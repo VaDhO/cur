@@ -190,9 +190,9 @@ class Model:
         В случае ошибки возвращает 0.0.
         """
         try:
-            return float(value) if pd.notna(value) and value != "" else 0.0
+            return float(value) if pd.notna(value) and value != "" else float(0.0)
         except (ValueError, TypeError):
-            return 0.0
+            return float(0.0)
 
     def cal_tab1(self):
         """

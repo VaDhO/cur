@@ -11,7 +11,7 @@ from data_tab import Model
 class NewModelScreen(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Моделирование системы")
+        self.setWindowTitle("Моделирование")
         self.setGeometry(100, 100, 600, 300)
 
         # Модель данных
@@ -224,10 +224,3 @@ class NewModelScreen(QMainWindow):
         # Открываем окно с таблицами
         self.results_window = ViewModel(self.model_data)
         self.results_window.show()
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = NewModelScreen()
-    window.show()
-    sys.exit(app.exec())

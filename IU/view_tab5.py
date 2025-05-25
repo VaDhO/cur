@@ -1,6 +1,7 @@
+import numpy
 import pandas as pd
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QMessageBox
 
 
 class ViewTable5(QTableWidget):
@@ -153,15 +154,18 @@ class ViewTable5(QTableWidget):
         data = tabel5
 
         # Заполняем таблицу
-        for row_idx, row_data in enumerate(list(data.columns)):
-            for col_idx, cell_data in enumerate(data[row_data]):
-                if type(cell_data) == float:
-                    item = QTableWidgetItem("{:.2f}".format(float(cell_data)))
-                    item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)  # Запрет редактирования
-                else:
-                    item = QTableWidgetItem(cell_data)
-                    item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)  # Запрет редактирования
-                self.setItem(col_idx + 4, row_idx + 1, item)
+        try:
+            for row_idx, row_data in enumerate(list(data.columns)):
+                for col_idx, cell_data in enumerate(data[row_data]):
+                    if type(cell_data) == float or type(cell_data) == numpy.float64:
+                        item = QTableWidgetItem("{:.2f}".format(float(cell_data)))
+                        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)  # Запрет редактирования
+                    else:
+                        item = QTableWidgetItem(cell_data)
+                        item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)  # Запрет редактирования
+                    self.setItem(col_idx + 4, row_idx + 1, item)
+        except Exception as e:
+            QMessageBox.critical(self, "Ошибка", f"Ошибка загрузки модели таб 5:\n{str(e)}")
 
     def update_data(self, data):
         self.setRowCount(len(data))

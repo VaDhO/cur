@@ -7,7 +7,7 @@ class ModelParametersDialogCXO(QDialog):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("asd")
+        self.setWindowTitle("Отчет CXO")
         self.setFixedSize(700, 500)
 
         layout = QVBoxLayout()
@@ -46,7 +46,7 @@ class ModelParametersDialogCXO(QDialog):
         form_layout.addRow("Цена без пошлины, руб./ц", self.param13_input)
 
         # Кнопки
-        self.calculate_btn = QPushButton("Рассчитать")
+        self.calculate_btn = QPushButton("Записать")
         self.cancel_btn = QPushButton("Отмена")
 
         # Расположение кнопок
@@ -87,7 +87,7 @@ class ModelParametersDialogPROM(QDialog):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Параметры модели")
+        self.setWindowTitle("Отчет пром.перераб")
         self.setFixedSize(700, 500)
 
         layout = QVBoxLayout()
@@ -108,7 +108,7 @@ class ModelParametersDialogPROM(QDialog):
         form_layout.addRow("Таможенная пошлина, руб.", self.param5_input)
 
         # Кнопки
-        self.calculate_btn = QPushButton("Рассчитать")
+        self.calculate_btn = QPushButton("Записать")
         self.cancel_btn = QPushButton("Отмена")
 
         # Расположение кнопок
@@ -141,7 +141,7 @@ class ModelParametersDialogNORM(QDialog):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Параметры модели")
+        self.setWindowTitle("Нормативы")
         self.setFixedSize(700, 500)
 
         layout = QVBoxLayout()
@@ -158,7 +158,7 @@ class ModelParametersDialogNORM(QDialog):
         form_layout.addRow("Средняя цена единицы продукции масла подсолнечного, руб.", self.param3_input)
 
         # Кнопки
-        self.calculate_btn = QPushButton("Рассчитать")
+        self.calculate_btn = QPushButton("Записать")
         self.cancel_btn = QPushButton("Отмена")
 
         # Расположение кнопок
@@ -189,7 +189,7 @@ class ModelParametersDialogTrCXO(QDialog):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Параметры модели")
+        self.setWindowTitle("Транспортировка СХ")
         self.setFixedSize(800, 600)
 
         layout = QVBoxLayout()
@@ -240,7 +240,7 @@ class ModelParametersDialogTrCXO(QDialog):
         form_layout.addRow("\t\tТарифы за:  1 км расстояния, тыс.руб:", self.param17_input)
 
         # Кнопки
-        self.calculate_btn = QPushButton("Рассчитать")
+        self.calculate_btn = QPushButton("Записать")
         self.cancel_btn = QPushButton("Отмена")
 
         # Расположение кнопок
@@ -285,7 +285,7 @@ class ModelParametersDialogTrProm(QDialog):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Параметры модели")
+        self.setWindowTitle("Транспортировка промышленность")
         self.setFixedSize(800, 600)
 
         layout = QVBoxLayout()
@@ -336,7 +336,7 @@ class ModelParametersDialogTrProm(QDialog):
         form_layout.addRow("\t\tТарифы за:  1 км расстояния, тыс.руб:", self.param17_input)
 
         # Кнопки
-        self.calculate_btn = QPushButton("Рассчитать")
+        self.calculate_btn = QPushButton("Записать")
         self.cancel_btn = QPushButton("Отмена")
 
         # Расположение кнопок

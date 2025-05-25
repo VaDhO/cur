@@ -101,7 +101,7 @@ class MainScreen(QMainWindow):
                 try:
                     num = float(value)
                     if math.isnan(num):
-                        return ''
+                        return ""
                     return num
                 except (ValueError, TypeError):
                     return ""
