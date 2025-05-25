@@ -178,3 +178,5 @@ class ViewTable6(QTableWidget):
                 item = QTableWidgetItem(str(cell_data))
                 item.setFlags(item.flags() ^ Qt.ItemFlag.ItemIsEditable)
                 self.setItem(row_idx, col_idx, item)
+
+

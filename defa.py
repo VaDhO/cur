@@ -14,7 +14,8 @@ def save_model_to_template(model, output_path):
             base_path = sys._MEIPASS
         else:
             base_path = os.path.dirname(__file__)
-        return os.path.join(base_path, '1,3,4,5,6.xlsx')
+        template_name = '1,3,4,5,6.xlsx'
+        return os.path.join(base_path, template_name)
 
     template_path = get_template_path()
     copyfile(template_path, output_path)
@@ -35,3 +36,6 @@ def save_model_to_template(model, output_path):
                 ws.cell(row=start_row + i, column=start_col + j, value=value)
     wb.save(output_path)
     print(f"Сохранено в файл: {output_path}")
+
+
+
