@@ -2,9 +2,10 @@ import sys
 
 import pandas as pd
 from PyQt6.QtWidgets import (QTabWidget, QMainWindow, QWidget, QVBoxLayout,
-                             QApplication, QPushButton, QHBoxLayout, QMessageBox, QFileDialog)
+                             QApplication, QPushButton, QHBoxLayout, QMessageBox, QFileDialog, QDialog)
 
 from IU.View_tab6 import ViewTable6
+from IU.edit_model_screen import EditModelScreen
 from IU.view_tab1 import ViewTable1
 from IU.view_tab3 import ViewTable3
 from IU.view_tab5 import ViewTable5
@@ -15,7 +16,7 @@ from defa import save_model_to_template
 class ViewModel(QMainWindow):
     def __init__(self, model_new):
         super().__init__()
-        self.setWindowTitle("Приложение с вкладками")
+        self.setWindowTitle("Модель")
         self.setGeometry(100, 100, 1000, 700)
         self.model = model_new
 
@@ -30,17 +31,21 @@ class ViewModel(QMainWindow):
         # Кнопка "Рассчитать"
         self.calculate_btn = QPushButton("Рассчитать")
         self.calculate_btn.clicked.connect(self.calculate_and_update)
-        self.calculate_btn.setFixedHeight(40)
+        self.calculate_btn.setFixedHeight(30)
 
         # Кнопка "Сохранить в Excel"
         self.save_excel_btn = QPushButton("Сохранить всё в Excel")
         self.save_excel_btn.clicked.connect(self.save_full_model_to_excel)
-        self.save_excel_btn.setFixedHeight(40)
+        self.save_excel_btn.setFixedHeight(30)
 
         # Кнопка "Сохранить в .cxo"
         self.save_cxo_btn = QPushButton("Сохранить всё в .cxo")
         self.save_cxo_btn.clicked.connect(self.save_to_cxo)
-        self.save_cxo_btn.setFixedHeight(40)
+        self.save_cxo_btn.setFixedHeight(30)
+        # Кнопка "Редактировать"
+        self.edit_model_btn = QPushButton("Редактировать")
+        self.edit_model_btn.clicked.connect(self.open_edit_model)
+        self.edit_model_btn.setFixedHeight(30)
 
         # Стили для кнопок
         button_style = """
@@ -59,11 +64,13 @@ class ViewModel(QMainWindow):
         self.calculate_btn.setStyleSheet(button_style)
         self.save_excel_btn.setStyleSheet(button_style)
         self.save_cxo_btn.setStyleSheet(button_style)
+        self.edit_model_btn.setStyleSheet(button_style)
 
         # Добавляем кнопки в layout
         top_button_layout.addWidget(self.calculate_btn)
         top_button_layout.addWidget(self.save_excel_btn)
         top_button_layout.addWidget(self.save_cxo_btn)
+        top_button_layout.addWidget(self.edit_model_btn)
 
         # --- Вкладки ---
         self.tabs = QTabWidget()
@@ -148,6 +155,19 @@ class ViewModel(QMainWindow):
             QMessageBox.information(self, "Успех", f"Файл успешно сохранён:\n{file_path}")
         except Exception as e:
             QMessageBox.critical(self, "Ошибка", f"Не удалось сохранить файл:\n{str(e)}")
+
+    def open_edit_model(self):
+        try:
+            dialog = EditModelScreen(self.model)
+            result = dialog.exec()
+            if result == QDialog.DialogCode.Accepted:
+                QMessageBox.information(self,"Успех", "Изменения сохранены!")
+                self.init_tabs()
+            else:
+                QMessageBox.information(self, "Отмена", "Изменения отменены.")
+        except Exception as e:
+            QMessageBox.critical(self, "Ошибка", f"Ошибка при обновлении модели:\n{str(e)}")
+
 
 if __name__ == "__main__":
     model = Model()

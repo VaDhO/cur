@@ -1,3 +1,4 @@
+import math
 from io import StringIO
 
 import pandas as pd
@@ -98,12 +99,15 @@ class MainScreen(QMainWindow):
             # Приводим каждую ячейку к float, если возможно, иначе ''
             def safe_convert(value):
                 try:
-                    return float(value)
+                    num = float(value)
+                    if math.isnan(num):
+                        return ''
+                    return num
                 except (ValueError, TypeError):
-                    return ''
+                    return ""
 
             # Применяем преобразование ко всей таблице
-            df = df.applymap(safe_convert)
+            df = df.map(safe_convert)
 
             # Сохраняем в модель
             if hasattr(model, section_name):
